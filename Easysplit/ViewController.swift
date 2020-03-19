@@ -72,6 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Carregou")
         itens.append(Item())
         itens.append(Item())
         aparenciaBotaoOK.layer.masksToBounds = true
