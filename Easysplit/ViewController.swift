@@ -35,11 +35,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //    }
     //
     
+    
     var pessoas: [Pessoa] = []
     var itens: [Item] = []
     
     var precoItem1: Double = 0
     var precoItem2: Double = 0
+    
     
     @IBOutlet var pessoa1Item1: UILabel!
     @IBOutlet var pessoa2Item1: UILabel!
@@ -68,18 +70,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var aparenciaBotaoOK: UIButton!
     @IBOutlet var aparenciaBotaoCalcular: UIButton!
+   
+    @IBOutlet var header: UIView!
+    @IBOutlet var boxResultado: UIView!
+    @IBOutlet var boxCompra: UIView!
+    @IBOutlet var labelCompra: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("Carregou")
+        
         itens.append(Item())
         itens.append(Item())
-        aparenciaBotaoOK.layer.masksToBounds = true
+        
+        header.layer.cornerRadius = 30
+        
         aparenciaBotaoOK.layer.cornerRadius = 5
-        aparenciaBotaoCalcular.layer.masksToBounds = true
         aparenciaBotaoCalcular.layer.cornerRadius = 5
+        boxResultado.layer.cornerRadius = 5
+        boxCompra.layer.cornerRadius = 5
+        labelCompra.textColor = .lightGray
+        
         ocultarLabelBotoes(ocultar:true)
+        ocultarBoxResultado(ocultar: true)
+        ocultarBoxCompra(ocultar: false)
+        
         textFieldPessoa1.delegate = self
         textFieldPessoa2.delegate = self
         textFieldPessoa3.delegate = self
@@ -100,6 +116,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func ocultarBoxResultado(ocultar:Bool) {
+        boxResultado.isHidden = ocultar
+    }
+    
+    func ocultarBoxCompra(ocultar:Bool) {
+    boxCompra.isHidden = ocultar
+    }
+        
     func ocultarLabelBotoes(ocultar:Bool) {
         pessoa1Item1.isHidden = ocultar
         pessoa2Item1.isHidden = ocultar
@@ -107,10 +131,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pessoa1Item2.isHidden = ocultar
         pessoa2Item2.isHidden = ocultar
         pessoa3Item2.isHidden = ocultar
+        aparenciaBotaoCalcular.isHidden = ocultar
     }
+    
     
     @IBAction func cadastrarPessoas(_ sender: Any) {
         ocultarLabelBotoes(ocultar:false)
+        labelCompra.textColor = .darkGray
+        ocultarBoxCompra(ocultar: true)
         pessoas.append(Pessoa(nomeDaPessoa: textFieldPessoa1.text!))
         pessoas.append(Pessoa(nomeDaPessoa: textFieldPessoa2.text!))
         pessoas.append(Pessoa(nomeDaPessoa: textFieldPessoa3.text!))
@@ -125,7 +153,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textFieldPessoa2.resignFirstResponder()
         textFieldPessoa3.resignFirstResponder()
     }
-    
     
     
     @IBAction func botaoPessoa1Item1(_ sender: Any) {
@@ -156,6 +183,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func botaoCalcular(_ sender: Any) {
         //itens.append(Item(nome: "Miojo", valor: Double(valorItem1.text!)!))
+        ocultarBoxResultado(ocultar:false)
         itens[0].nome = nomeItem1.text ?? "Miojo"
         itens[1].nome = nomeItem2.text ?? "Pitú"
         itens[0].valor = Double(valorItem1.text!)!
@@ -168,11 +196,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         itens[1].dividirValorParcial()
         
         let resultadoParcial1 = pessoas[0].valorParcial
-        resultadoPessoa1.text = "R$ \(resultadoParcial1)"
+        resultadoPessoa1.text = String("R$ %.2d",(resultadoParcial1))
         let resultadoParcial2 = pessoas[1].valorParcial
         resultadoPessoa2.text = "R$ \(resultadoParcial2)"
         let resultadoParcial3 = pessoas[2].valorParcial
         resultadoPessoa3.text = "R$ \(resultadoParcial3)"
+        
+        
     }
     
 }

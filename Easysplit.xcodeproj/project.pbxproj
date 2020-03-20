@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED373E58241829A8009E6CA0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED373E57241829A8009E6CA0 /* Item.swift */; };
+		ED73266E2425360800D40563 /* Easysplit in Resources */ = {isa = PBXBuildFile; fileRef = ED73266D2425360800D40563 /* Easysplit */; };
 		ED8AB832241ABB8900FE7295 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AB831241ABB8900FE7295 /* Pessoa.swift */; };
 		EDC9FDF8240ED92200E36589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FDF7240ED92200E36589 /* AppDelegate.swift */; };
 		EDC9FDFA240ED92200E36589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FDF9240ED92200E36589 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		ED373E57241829A8009E6CA0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ED73266D2425360800D40563 /* Easysplit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Easysplit; sourceTree = "<group>"; };
 		ED8AB831241ABB8900FE7295 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
 		EDC9FDF4240ED92200E36589 /* Easysplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Easysplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC9FDF7240ED92200E36589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				ED8AB831241ABB8900FE7295 /* Pessoa.swift */,
 				EDC9FDFD240ED92200E36589 /* Main.storyboard */,
 				EDC9FE00240ED92600E36589 /* Assets.xcassets */,
+				ED73266D2425360800D40563 /* Easysplit */,
 				EDC9FE02240ED92600E36589 /* LaunchScreen.storyboard */,
 				EDC9FE05240ED92600E36589 /* Info.plist */,
 			);
@@ -134,6 +137,7 @@
 				EDC9FE04240ED92600E36589 /* LaunchScreen.storyboard in Resources */,
 				EDC9FE01240ED92600E36589 /* Assets.xcassets in Resources */,
 				EDC9FDFF240ED92200E36589 /* Main.storyboard in Resources */,
+				ED73266E2425360800D40563 /* Easysplit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
